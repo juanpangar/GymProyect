@@ -1,0 +1,10 @@
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\GymProject.exe.config
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\GymProject.exe
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\GymProject.pdb
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.csprojResolveAssemblyReference.cache
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.LogApp.resources
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Properties.Resources.resources
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.csproj.GenerateResource.Cache
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.exe
+c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.pdb
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Inicio.resources
