@@ -8,3 +8,5 @@ c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymPro
 c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.exe
 c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.pdb
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Inicio.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\BDClientes.mdf
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\BDClientes_log.ldf
