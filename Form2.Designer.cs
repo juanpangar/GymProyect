@@ -38,26 +38,26 @@
             this.listaDeSociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todosLosSociosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeSociosMensualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeSociosConImpagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impagos = new System.Windows.Forms.GroupBox();
+            this.numeroMorososL = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.morosoPB1 = new System.Windows.Forms.PictureBox();
             this.morosoPB3 = new System.Windows.Forms.PictureBox();
             this.morosoPB4 = new System.Windows.Forms.PictureBox();
             this.morosoPB2 = new System.Windows.Forms.PictureBox();
-            this.morosoL1 = new System.Windows.Forms.Label();
-            this.morosoL2 = new System.Windows.Forms.Label();
-            this.morosoL3 = new System.Windows.Forms.Label();
-            this.morosoL4 = new System.Windows.Forms.Label();
-            this.impagos = new System.Windows.Forms.GroupBox();
-            this.numeroMorososL = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.impagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listaDeSociosConImpagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.impagos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB2)).BeginInit();
-            this.impagos.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -94,6 +94,7 @@
             this.searchB.Size = new System.Drawing.Size(25, 25);
             this.searchB.TabIndex = 5;
             this.searchB.UseVisualStyleBackColor = true;
+            this.searchB.Click += new System.EventHandler(this.searchB_Click);
             // 
             // menuStrip1
             // 
@@ -112,6 +113,7 @@
             this.nuevoSocioToolStripMenuItem.Name = "nuevoSocioToolStripMenuItem";
             this.nuevoSocioToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.nuevoSocioToolStripMenuItem.Text = "Nuevo socio";
+            this.nuevoSocioToolStripMenuItem.Click += new System.EventHandler(this.nuevoSocioToolStripMenuItem_Click);
             // 
             // listaDeSociosToolStripMenuItem
             // 
@@ -127,115 +129,14 @@
             this.todosLosSociosToolStripMenuItem.Name = "todosLosSociosToolStripMenuItem";
             this.todosLosSociosToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.todosLosSociosToolStripMenuItem.Text = "Todos los socios";
+            this.todosLosSociosToolStripMenuItem.Click += new System.EventHandler(this.todosLosSociosToolStripMenuItem_Click);
             // 
             // listaDeSociosMensualToolStripMenuItem
             // 
             this.listaDeSociosMensualToolStripMenuItem.Name = "listaDeSociosMensualToolStripMenuItem";
             this.listaDeSociosMensualToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.listaDeSociosMensualToolStripMenuItem.Text = "Lista de socios mensual";
-            // 
-            // morosoPB1
-            // 
-            this.morosoPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB1.Location = new System.Drawing.Point(28, 19);
-            this.morosoPB1.Name = "morosoPB1";
-            this.morosoPB1.Size = new System.Drawing.Size(95, 93);
-            this.morosoPB1.TabIndex = 8;
-            this.morosoPB1.TabStop = false;
-            // 
-            // morosoPB3
-            // 
-            this.morosoPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB3.Location = new System.Drawing.Point(28, 156);
-            this.morosoPB3.Name = "morosoPB3";
-            this.morosoPB3.Size = new System.Drawing.Size(95, 93);
-            this.morosoPB3.TabIndex = 10;
-            this.morosoPB3.TabStop = false;
-            // 
-            // morosoPB4
-            // 
-            this.morosoPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB4.Location = new System.Drawing.Point(174, 156);
-            this.morosoPB4.Name = "morosoPB4";
-            this.morosoPB4.Size = new System.Drawing.Size(95, 93);
-            this.morosoPB4.TabIndex = 12;
-            this.morosoPB4.TabStop = false;
-            // 
-            // morosoPB2
-            // 
-            this.morosoPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB2.Location = new System.Drawing.Point(174, 19);
-            this.morosoPB2.Name = "morosoPB2";
-            this.morosoPB2.Size = new System.Drawing.Size(95, 93);
-            this.morosoPB2.TabIndex = 13;
-            this.morosoPB2.TabStop = false;
-            // 
-            // morosoL1
-            // 
-            this.morosoL1.AutoSize = true;
-            this.morosoL1.Location = new System.Drawing.Point(25, 124);
-            this.morosoL1.Name = "morosoL1";
-            this.morosoL1.Size = new System.Drawing.Size(0, 13);
-            this.morosoL1.TabIndex = 14;
-            // 
-            // morosoL2
-            // 
-            this.morosoL2.AutoSize = true;
-            this.morosoL2.Location = new System.Drawing.Point(171, 124);
-            this.morosoL2.Name = "morosoL2";
-            this.morosoL2.Size = new System.Drawing.Size(0, 13);
-            this.morosoL2.TabIndex = 15;
-            // 
-            // morosoL3
-            // 
-            this.morosoL3.AutoSize = true;
-            this.morosoL3.Location = new System.Drawing.Point(25, 261);
-            this.morosoL3.Name = "morosoL3";
-            this.morosoL3.Size = new System.Drawing.Size(0, 13);
-            this.morosoL3.TabIndex = 16;
-            // 
-            // morosoL4
-            // 
-            this.morosoL4.AutoSize = true;
-            this.morosoL4.Location = new System.Drawing.Point(180, 261);
-            this.morosoL4.Name = "morosoL4";
-            this.morosoL4.Size = new System.Drawing.Size(0, 13);
-            this.morosoL4.TabIndex = 17;
-            // 
-            // impagos
-            // 
-            this.impagos.Controls.Add(this.morosoL4);
-            this.impagos.Controls.Add(this.morosoL3);
-            this.impagos.Controls.Add(this.morosoL2);
-            this.impagos.Controls.Add(this.morosoL1);
-            this.impagos.Controls.Add(this.morosoPB2);
-            this.impagos.Controls.Add(this.morosoPB4);
-            this.impagos.Controls.Add(this.morosoPB3);
-            this.impagos.Controls.Add(this.morosoPB1);
-            this.impagos.Location = new System.Drawing.Point(342, 36);
-            this.impagos.Name = "impagos";
-            this.impagos.Size = new System.Drawing.Size(291, 286);
-            this.impagos.TabIndex = 18;
-            this.impagos.TabStop = false;
-            this.impagos.Text = "Impagos";
-            // 
-            // numeroMorososL
-            // 
-            this.numeroMorososL.AutoSize = true;
-            this.numeroMorososL.Location = new System.Drawing.Point(446, 336);
-            this.numeroMorososL.Name = "numeroMorososL";
-            this.numeroMorososL.Size = new System.Drawing.Size(128, 13);
-            this.numeroMorososL.TabIndex = 19;
-            this.numeroMorososL.Text = "nº de socios con impagos";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(408, 333);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(32, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.Text = "0";
+            this.listaDeSociosMensualToolStripMenuItem.Click += new System.EventHandler(this.listaDeSociosMensualToolStripMenuItem_Click);
             // 
             // impagosToolStripMenuItem
             // 
@@ -250,18 +151,130 @@
             this.listaDeSociosConImpagosToolStripMenuItem.Name = "listaDeSociosConImpagosToolStripMenuItem";
             this.listaDeSociosConImpagosToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.listaDeSociosConImpagosToolStripMenuItem.Text = "Lista de socios con impagos";
+            this.listaDeSociosConImpagosToolStripMenuItem.Click += new System.EventHandler(this.listaDeSociosConImpagosToolStripMenuItem_Click);
+            // 
+            // impagos
+            // 
+            this.impagos.Controls.Add(this.textBox3);
+            this.impagos.Controls.Add(this.textBox4);
+            this.impagos.Controls.Add(this.textBox5);
+            this.impagos.Controls.Add(this.morosoPB2);
+            this.impagos.Controls.Add(this.textBox2);
+            this.impagos.Controls.Add(this.morosoPB4);
+            this.impagos.Controls.Add(this.morosoPB3);
+            this.impagos.Controls.Add(this.morosoPB1);
+            this.impagos.Location = new System.Drawing.Point(313, 41);
+            this.impagos.Name = "impagos";
+            this.impagos.Size = new System.Drawing.Size(317, 312);
+            this.impagos.TabIndex = 18;
+            this.impagos.TabStop = false;
+            this.impagos.Text = "Impagos";
+            // 
+            // numeroMorososL
+            // 
+            this.numeroMorososL.AutoSize = true;
+            this.numeroMorososL.Location = new System.Drawing.Point(414, 362);
+            this.numeroMorososL.Name = "numeroMorososL";
+            this.numeroMorososL.Size = new System.Drawing.Size(128, 13);
+            this.numeroMorososL.TabIndex = 19;
+            this.numeroMorososL.Text = "nº de socios con impagos";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(376, 359);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(32, 20);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Text = "0";
+            // 
+            // morosoPB1
+            // 
+            this.morosoPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB1.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB1.Image")));
+            this.morosoPB1.Location = new System.Drawing.Point(20, 28);
+            this.morosoPB1.Name = "morosoPB1";
+            this.morosoPB1.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB1.TabIndex = 8;
+            this.morosoPB1.TabStop = false;
+            // 
+            // morosoPB3
+            // 
+            this.morosoPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB3.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB3.Image")));
+            this.morosoPB3.Location = new System.Drawing.Point(20, 169);
+            this.morosoPB3.Name = "morosoPB3";
+            this.morosoPB3.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB3.TabIndex = 10;
+            this.morosoPB3.TabStop = false;
+            // 
+            // morosoPB4
+            // 
+            this.morosoPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB4.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB4.Image")));
+            this.morosoPB4.Location = new System.Drawing.Point(166, 169);
+            this.morosoPB4.Name = "morosoPB4";
+            this.morosoPB4.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB4.TabIndex = 12;
+            this.morosoPB4.TabStop = false;
+            // 
+            // morosoPB2
+            // 
+            this.morosoPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB2.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB2.Image")));
+            this.morosoPB2.Location = new System.Drawing.Point(166, 28);
+            this.morosoPB2.Name = "morosoPB2";
+            this.morosoPB2.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB2.TabIndex = 13;
+            this.morosoPB2.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(20, 132);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(130, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(166, 132);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(130, 20);
+            this.textBox3.TabIndex = 23;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(20, 273);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(128, 20);
+            this.textBox4.TabIndex = 24;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(166, 273);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(130, 20);
+            this.textBox5.TabIndex = 25;
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 394);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numeroMorososL);
             this.Controls.Add(this.impagos);
             this.Controls.Add(this.searchB);
             this.Controls.Add(this.searchTextB);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.searchClientL);
+            this.Controls.Add(this.numeroMorososL);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -271,12 +284,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.impagos.ResumeLayout(false);
+            this.impagos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB2)).EndInit();
-            this.impagos.ResumeLayout(false);
-            this.impagos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,18 +306,18 @@
         private System.Windows.Forms.ToolStripMenuItem listaDeSociosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todosLosSociosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeSociosMensualToolStripMenuItem;
-        private System.Windows.Forms.PictureBox morosoPB1;
-        private System.Windows.Forms.PictureBox morosoPB3;
-        private System.Windows.Forms.PictureBox morosoPB4;
-        private System.Windows.Forms.PictureBox morosoPB2;
-        private System.Windows.Forms.Label morosoL1;
-        private System.Windows.Forms.Label morosoL2;
-        private System.Windows.Forms.Label morosoL3;
-        private System.Windows.Forms.Label morosoL4;
         private System.Windows.Forms.GroupBox impagos;
         private System.Windows.Forms.Label numeroMorososL;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem impagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeSociosConImpagosToolStripMenuItem;
+        private System.Windows.Forms.PictureBox morosoPB2;
+        private System.Windows.Forms.PictureBox morosoPB4;
+        private System.Windows.Forms.PictureBox morosoPB3;
+        private System.Windows.Forms.PictureBox morosoPB1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

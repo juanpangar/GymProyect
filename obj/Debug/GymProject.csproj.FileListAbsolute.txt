@@ -10,3 +10,8 @@ c:\users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymPro
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Inicio.resources
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\BDClientes.mdf
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\BDClientes_log.ldf
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.nuevoSocio.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.listaSocios.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.listasSociosMensual.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.listaSociosImpagos.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Cliente.resources
