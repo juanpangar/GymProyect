@@ -303,6 +303,8 @@ namespace GymProject {
             
             private global::System.Data.DataColumn columnTelefono;
             
+            private global::System.Data.DataColumn columnCuota;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TableDataTable() {
@@ -434,6 +436,14 @@ namespace GymProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CuotaColumn {
+                get {
+                    return this.columnCuota;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -469,7 +479,7 @@ namespace GymProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow AddTableRow(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono) {
+            public TableRow AddTableRow(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono, decimal Cuota) {
                 TableRow rowTableRow = ((TableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nº_Socio,
@@ -483,7 +493,8 @@ namespace GymProject {
                         Email,
                         Fecha_de_Alta,
                         Fecha_de_Baja,
-                        Telefono};
+                        Telefono,
+                        Cuota};
                 rowTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTableRow);
                 return rowTableRow;
@@ -525,6 +536,7 @@ namespace GymProject {
                 this.columnFecha_de_Alta = base.Columns["Fecha de Alta"];
                 this.columnFecha_de_Baja = base.Columns["Fecha de Baja"];
                 this.columnTelefono = base.Columns["Telefono"];
+                this.columnCuota = base.Columns["Cuota"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +566,8 @@ namespace GymProject {
                 base.Columns.Add(this.columnFecha_de_Baja);
                 this.columnTelefono = new global::System.Data.DataColumn("Telefono", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelefono);
+                this.columnCuota = new global::System.Data.DataColumn("Cuota", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCuota);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNº_Socio}, true));
                 this.columnNº_Socio.AllowDBNull = false;
@@ -576,6 +590,7 @@ namespace GymProject {
                 this.columnFecha_de_Alta.AllowDBNull = false;
                 this.columnFecha_de_Baja.AllowDBNull = false;
                 this.columnTelefono.AllowDBNull = false;
+                this.columnCuota.AllowDBNull = false;
                 this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
                 this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
                 this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
@@ -854,6 +869,17 @@ namespace GymProject {
                     this[this.tableTable.TelefonoColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Cuota {
+                get {
+                    return ((decimal)(this[this.tableTable.CuotaColumn]));
+                }
+                set {
+                    this[this.tableTable.CuotaColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -1027,10 +1053,11 @@ namespace GymProject.BDClientesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Fecha de Alta", "Fecha de Alta");
             tableMapping.ColumnMappings.Add("Fecha de Baja", "Fecha de Baja");
             tableMapping.ColumnMappings.Add("Telefono", "Telefono");
+            tableMapping.ColumnMappings.Add("Cuota", "Cuota");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Table] WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Table] WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1043,10 +1070,11 @@ namespace GymProject.BDClientesDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Table] ([Nº Socio], [DNI], [Apellidos], [Nombre], [Foto], [Direccion], [Localidad], [Provincia], [Email], [Fecha de Alta], [Fecha de Baja], [Telefono]) VALUES (@Nº_Socio, @DNI, @Apellidos, @Nombre, @Foto, @Direccion, @Localidad, @Provincia, @Email, @Fecha_de_Alta, @Fecha_de_Baja, @Telefono);
-SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Table] ([Nº Socio], [DNI], [Apellidos], [Nombre], [Foto], [Direccion], [Localidad], [Provincia], [Email], [Fecha de Alta], [Fecha de Baja], [Telefono], [Cuota]) VALUES (@Nº_Socio, @DNI, @Apellidos, @Nombre, @Foto, @Direccion, @Localidad, @Provincia, @Email, @Fecha_de_Alta, @Fecha_de_Baja, @Telefono, @Cuota);
+SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1060,10 +1088,11 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table] SET [Nº Socio] = @Nº_Socio, [DNI] = @DNI, [Apellidos] = @Apellidos, [Nombre] = @Nombre, [Foto] = @Foto, [Direccion] = @Direccion, [Localidad] = @Localidad, [Provincia] = @Provincia, [Email] = @Email, [Fecha de Alta] = @Fecha_de_Alta, [Fecha de Baja] = @Fecha_de_Baja, [Telefono] = @Telefono WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono));
-SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table] SET [Nº Socio] = @Nº_Socio, [DNI] = @DNI, [Apellidos] = @Apellidos, [Nombre] = @Nombre, [Foto] = @Foto, [Direccion] = @Direccion, [Localidad] = @Localidad, [Provincia] = @Provincia, [Email] = @Email, [Fecha de Alta] = @Fecha_de_Alta, [Fecha de Baja] = @Fecha_de_Baja, [Telefono] = @Telefono, [Cuota] = @Cuota WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota));
+SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1077,6 +1106,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apellidos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1088,6 +1118,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1104,7 +1135,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia," +
-                " Email, [Fecha de Alta], [Fecha de Baja], Telefono FROM [Table]";
+                " Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota FROM [Table]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1165,7 +1196,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Nº_Socio, string Original_DNI, string Original_Apellidos, string Original_Nombre, string Original_Direccion, string Original_Localidad, string Original_Provincia, string Original_Email, System.DateTime Original_Fecha_de_Alta, System.DateTime Original_Fecha_de_Baja, decimal Original_Telefono) {
+        public virtual int Delete(int Original_Nº_Socio, string Original_DNI, string Original_Apellidos, string Original_Nombre, string Original_Direccion, string Original_Localidad, string Original_Provincia, string Original_Email, System.DateTime Original_Fecha_de_Alta, System.DateTime Original_Fecha_de_Baja, decimal Original_Telefono, decimal Original_Cuota) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Nº_Socio));
             if ((Original_DNI == null)) {
                 throw new global::System.ArgumentNullException("Original_DNI");
@@ -1212,6 +1243,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Fecha_de_Alta));
             this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Fecha_de_Baja));
             this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Telefono));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_Cuota));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1232,7 +1264,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono) {
+        public virtual int Insert(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono, decimal Cuota) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Nº_Socio));
             if ((DNI == null)) {
                 throw new global::System.ArgumentNullException("DNI");
@@ -1285,6 +1317,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Fecha_de_Alta));
             this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja));
             this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(Telefono));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(Cuota));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1318,6 +1351,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     System.DateTime Fecha_de_Alta, 
                     System.DateTime Fecha_de_Baja, 
                     decimal Telefono, 
+                    decimal Cuota, 
                     int Original_Nº_Socio, 
                     string Original_DNI, 
                     string Original_Apellidos, 
@@ -1328,7 +1362,8 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Original_Email, 
                     System.DateTime Original_Fecha_de_Alta, 
                     System.DateTime Original_Fecha_de_Baja, 
-                    decimal Original_Telefono) {
+                    decimal Original_Telefono, 
+                    decimal Original_Cuota) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Nº_Socio));
             if ((DNI == null)) {
                 throw new global::System.ArgumentNullException("DNI");
@@ -1381,52 +1416,54 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Fecha_de_Alta));
             this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Telefono));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Nº_Socio));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Cuota));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Nº_Socio));
             if ((Original_DNI == null)) {
                 throw new global::System.ArgumentNullException("Original_DNI");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_DNI));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_DNI));
             }
             if ((Original_Apellidos == null)) {
                 throw new global::System.ArgumentNullException("Original_Apellidos");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Apellidos));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Apellidos));
             }
             if ((Original_Nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_Nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Nombre));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Nombre));
             }
             if ((Original_Direccion == null)) {
                 throw new global::System.ArgumentNullException("Original_Direccion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Direccion));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Direccion));
             }
             if ((Original_Localidad == null)) {
                 throw new global::System.ArgumentNullException("Original_Localidad");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Localidad));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Localidad));
             }
             if ((Original_Provincia == null)) {
                 throw new global::System.ArgumentNullException("Original_Provincia");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Provincia));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Provincia));
             }
             if ((Original_Email == null)) {
                 throw new global::System.ArgumentNullException("Original_Email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Email));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_Fecha_de_Alta));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_Fecha_de_Baja));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_Telefono));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_Fecha_de_Alta));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_Fecha_de_Baja));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_Telefono));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_Cuota));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1459,6 +1496,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     System.DateTime Fecha_de_Alta, 
                     System.DateTime Fecha_de_Baja, 
                     decimal Telefono, 
+                    decimal Cuota, 
                     int Original_Nº_Socio, 
                     string Original_DNI, 
                     string Original_Apellidos, 
@@ -1469,8 +1507,9 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Original_Email, 
                     System.DateTime Original_Fecha_de_Alta, 
                     System.DateTime Original_Fecha_de_Baja, 
-                    decimal Original_Telefono) {
-            return this.Update(Original_Nº_Socio, DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, Fecha_de_Alta, Fecha_de_Baja, Telefono, Original_Nº_Socio, Original_DNI, Original_Apellidos, Original_Nombre, Original_Direccion, Original_Localidad, Original_Provincia, Original_Email, Original_Fecha_de_Alta, Original_Fecha_de_Baja, Original_Telefono);
+                    decimal Original_Telefono, 
+                    decimal Original_Cuota) {
+            return this.Update(Original_Nº_Socio, DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, Fecha_de_Alta, Fecha_de_Baja, Telefono, Cuota, Original_Nº_Socio, Original_DNI, Original_Apellidos, Original_Nombre, Original_Direccion, Original_Localidad, Original_Provincia, Original_Email, Original_Fecha_de_Alta, Original_Fecha_de_Baja, Original_Telefono, Original_Cuota);
         }
     }
     
