@@ -67,6 +67,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDClientesDataSet.cs">
+      <DependentUpon>BDClientesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BDClientesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

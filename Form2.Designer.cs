@@ -41,23 +41,23 @@
             this.impagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeSociosConImpagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impagos = new System.Windows.Forms.GroupBox();
-            this.numeroMorososL = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.morosoPB1 = new System.Windows.Forms.PictureBox();
-            this.morosoPB3 = new System.Windows.Forms.PictureBox();
-            this.morosoPB4 = new System.Windows.Forms.PictureBox();
-            this.morosoPB2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.morosoPB2 = new System.Windows.Forms.PictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.morosoPB4 = new System.Windows.Forms.PictureBox();
+            this.morosoPB3 = new System.Windows.Forms.PictureBox();
+            this.morosoPB1 = new System.Windows.Forms.PictureBox();
+            this.numeroMorososL = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.impagos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,9 +75,9 @@
             this.searchClientL.AutoSize = true;
             this.searchClientL.Location = new System.Drawing.Point(53, 272);
             this.searchClientL.Name = "searchClientL";
-            this.searchClientL.Size = new System.Drawing.Size(101, 13);
+            this.searchClientL.Size = new System.Drawing.Size(71, 13);
             this.searchClientL.TabIndex = 3;
-            this.searchClientL.Text = "Busqueda de socio:";
+            this.searchClientL.Text = "Buscar socio:";
             // 
             // searchTextB
             // 
@@ -170,76 +170,6 @@
             this.impagos.TabStop = false;
             this.impagos.Text = "Impagos";
             // 
-            // numeroMorososL
-            // 
-            this.numeroMorososL.AutoSize = true;
-            this.numeroMorososL.Location = new System.Drawing.Point(414, 362);
-            this.numeroMorososL.Name = "numeroMorososL";
-            this.numeroMorososL.Size = new System.Drawing.Size(128, 13);
-            this.numeroMorososL.TabIndex = 19;
-            this.numeroMorososL.Text = "nº de socios con impagos";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(376, 359);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(32, 20);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.Text = "0";
-            // 
-            // morosoPB1
-            // 
-            this.morosoPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB1.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB1.Image")));
-            this.morosoPB1.Location = new System.Drawing.Point(20, 28);
-            this.morosoPB1.Name = "morosoPB1";
-            this.morosoPB1.Size = new System.Drawing.Size(130, 98);
-            this.morosoPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.morosoPB1.TabIndex = 8;
-            this.morosoPB1.TabStop = false;
-            // 
-            // morosoPB3
-            // 
-            this.morosoPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB3.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB3.Image")));
-            this.morosoPB3.Location = new System.Drawing.Point(20, 169);
-            this.morosoPB3.Name = "morosoPB3";
-            this.morosoPB3.Size = new System.Drawing.Size(130, 98);
-            this.morosoPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.morosoPB3.TabIndex = 10;
-            this.morosoPB3.TabStop = false;
-            // 
-            // morosoPB4
-            // 
-            this.morosoPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB4.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB4.Image")));
-            this.morosoPB4.Location = new System.Drawing.Point(166, 169);
-            this.morosoPB4.Name = "morosoPB4";
-            this.morosoPB4.Size = new System.Drawing.Size(130, 98);
-            this.morosoPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.morosoPB4.TabIndex = 12;
-            this.morosoPB4.TabStop = false;
-            // 
-            // morosoPB2
-            // 
-            this.morosoPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.morosoPB2.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB2.Image")));
-            this.morosoPB2.Location = new System.Drawing.Point(166, 28);
-            this.morosoPB2.Name = "morosoPB2";
-            this.morosoPB2.Size = new System.Drawing.Size(130, 98);
-            this.morosoPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.morosoPB2.TabIndex = 13;
-            this.morosoPB2.TabStop = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(20, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(130, 20);
-            this.textBox2.TabIndex = 22;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(166, 132);
@@ -264,6 +194,76 @@
             this.textBox5.Size = new System.Drawing.Size(130, 20);
             this.textBox5.TabIndex = 25;
             // 
+            // morosoPB2
+            // 
+            this.morosoPB2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB2.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB2.Image")));
+            this.morosoPB2.Location = new System.Drawing.Point(166, 28);
+            this.morosoPB2.Name = "morosoPB2";
+            this.morosoPB2.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB2.TabIndex = 13;
+            this.morosoPB2.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(20, 132);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(130, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // morosoPB4
+            // 
+            this.morosoPB4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB4.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB4.Image")));
+            this.morosoPB4.Location = new System.Drawing.Point(166, 169);
+            this.morosoPB4.Name = "morosoPB4";
+            this.morosoPB4.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB4.TabIndex = 12;
+            this.morosoPB4.TabStop = false;
+            // 
+            // morosoPB3
+            // 
+            this.morosoPB3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB3.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB3.Image")));
+            this.morosoPB3.Location = new System.Drawing.Point(20, 169);
+            this.morosoPB3.Name = "morosoPB3";
+            this.morosoPB3.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB3.TabIndex = 10;
+            this.morosoPB3.TabStop = false;
+            // 
+            // morosoPB1
+            // 
+            this.morosoPB1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.morosoPB1.Image = ((System.Drawing.Image)(resources.GetObject("morosoPB1.Image")));
+            this.morosoPB1.Location = new System.Drawing.Point(20, 28);
+            this.morosoPB1.Name = "morosoPB1";
+            this.morosoPB1.Size = new System.Drawing.Size(130, 98);
+            this.morosoPB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.morosoPB1.TabIndex = 8;
+            this.morosoPB1.TabStop = false;
+            // 
+            // numeroMorososL
+            // 
+            this.numeroMorososL.AutoSize = true;
+            this.numeroMorososL.Location = new System.Drawing.Point(414, 362);
+            this.numeroMorososL.Name = "numeroMorososL";
+            this.numeroMorososL.Size = new System.Drawing.Size(128, 13);
+            this.numeroMorososL.TabIndex = 19;
+            this.numeroMorososL.Text = "nº de socios con impagos";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(376, 359);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(32, 20);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.Text = "0";
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,10 +286,10 @@
             this.menuStrip1.PerformLayout();
             this.impagos.ResumeLayout(false);
             this.impagos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.morosoPB2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.morosoPB1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

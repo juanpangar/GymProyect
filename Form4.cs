@@ -16,5 +16,20 @@ namespace GymProject
         {
             InitializeComponent();
         }
+
+        private void tableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.tableBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDClientesDataSet);
+
+        }
+
+        private void listaSocios_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bDClientesDataSet.Table' table. You can move, or remove it, as needed.
+            this.tableTableAdapter.Fill(this.bDClientesDataSet.Table);
+
+        }
     }
 }
