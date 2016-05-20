@@ -15,3 +15,6 @@ C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymPro
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.listasSociosMensual.resources
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.listaSociosImpagos.resources
 C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\obj\Debug\GymProject.Cliente.resources
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\itextsharp.dll
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\itextsharp.pdfa.dll
+C:\Users\juanp\onedrive\documentos\visual studio 2015\Projects\GymProject\GymProject\bin\Debug\itextsharp.xtra.dll

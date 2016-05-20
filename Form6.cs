@@ -16,5 +16,12 @@ namespace GymProject
         {
             InitializeComponent();
         }
+
+        private void listaSociosImpagos_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bDClientesDataSet.Table' table. You can move, or remove it, as needed.
+            this.tableTableAdapter.Fill(this.bDClientesDataSet.Table);
+
+        }
     }
 }
