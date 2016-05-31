@@ -56,11 +56,14 @@
             this.fecha_de_BajaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.cuotaTextBox = new System.Windows.Forms.TextBox();
-            this.bDClientesDataSet = new GymProject.BDClientesDataSet();
+            this.deudaTextBox = new System.Windows.Forms.TextBox();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDClientesDataSet = new GymProject.BDClientesDataSet();
             this.tableTableAdapter = new GymProject.BDClientesDataSetTableAdapters.TableTableAdapter();
             this.tableAdapterManager = new GymProject.BDClientesDataSetTableAdapters.TableAdapterManager();
-            this.deudaTextBox = new System.Windows.Forms.TextBox();
+            this.dardeBaja = new System.Windows.Forms.Button();
+            this.stateClient = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             nº_SocioLabel = new System.Windows.Forms.Label();
             dNILabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -75,8 +78,8 @@
             cuotaLabel = new System.Windows.Forms.Label();
             deudaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDClientesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDClientesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // nº_SocioLabel
@@ -88,14 +91,6 @@
             nº_SocioLabel.TabIndex = 27;
             nº_SocioLabel.Text = "Nº Socio:";
             // 
-            // nº_SocioTextBox
-            // 
-            this.nº_SocioTextBox.Location = new System.Drawing.Point(248, 147);
-            this.nº_SocioTextBox.Name = "nº_SocioTextBox";
-            this.nº_SocioTextBox.ReadOnly = true;
-            this.nº_SocioTextBox.Size = new System.Drawing.Size(55, 20);
-            this.nº_SocioTextBox.TabIndex = 28;
-            // 
             // dNILabel
             // 
             dNILabel.AutoSize = true;
@@ -104,14 +99,6 @@
             dNILabel.Size = new System.Drawing.Size(29, 13);
             dNILabel.TabIndex = 29;
             dNILabel.Text = "DNI:";
-            // 
-            // dNITextBox
-            // 
-            this.dNITextBox.Location = new System.Drawing.Point(92, 173);
-            this.dNITextBox.Name = "dNITextBox";
-            this.dNITextBox.ReadOnly = true;
-            this.dNITextBox.Size = new System.Drawing.Size(211, 20);
-            this.dNITextBox.TabIndex = 30;
             // 
             // apellidosLabel
             // 
@@ -122,14 +109,6 @@
             apellidosLabel.TabIndex = 31;
             apellidosLabel.Text = "Apellidos:";
             // 
-            // apellidosTextBox
-            // 
-            this.apellidosTextBox.Location = new System.Drawing.Point(92, 199);
-            this.apellidosTextBox.Name = "apellidosTextBox";
-            this.apellidosTextBox.ReadOnly = true;
-            this.apellidosTextBox.Size = new System.Drawing.Size(211, 20);
-            this.apellidosTextBox.TabIndex = 32;
-            // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
@@ -138,6 +117,111 @@
             nombreLabel.Size = new System.Drawing.Size(47, 13);
             nombreLabel.TabIndex = 33;
             nombreLabel.Text = "Nombre:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(32, 266);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.TabIndex = 36;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // localidadLabel
+            // 
+            localidadLabel.AutoSize = true;
+            localidadLabel.Location = new System.Drawing.Point(32, 292);
+            localidadLabel.Name = "localidadLabel";
+            localidadLabel.Size = new System.Drawing.Size(56, 13);
+            localidadLabel.TabIndex = 38;
+            localidadLabel.Text = "Localidad:";
+            // 
+            // provinciaLabel
+            // 
+            provinciaLabel.AutoSize = true;
+            provinciaLabel.Location = new System.Drawing.Point(32, 318);
+            provinciaLabel.Name = "provinciaLabel";
+            provinciaLabel.Size = new System.Drawing.Size(54, 13);
+            provinciaLabel.TabIndex = 40;
+            provinciaLabel.Text = "Provincia:";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(320, 295);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 42;
+            emailLabel.Text = "Email:";
+            // 
+            // fecha_de_AltaLabel
+            // 
+            fecha_de_AltaLabel.AutoSize = true;
+            fecha_de_AltaLabel.Location = new System.Drawing.Point(32, 361);
+            fecha_de_AltaLabel.Name = "fecha_de_AltaLabel";
+            fecha_de_AltaLabel.Size = new System.Drawing.Size(76, 13);
+            fecha_de_AltaLabel.TabIndex = 44;
+            fecha_de_AltaLabel.Text = "Fecha de Alta:";
+            // 
+            // fecha_de_BajaLabel
+            // 
+            fecha_de_BajaLabel.AutoSize = true;
+            fecha_de_BajaLabel.Location = new System.Drawing.Point(32, 390);
+            fecha_de_BajaLabel.Name = "fecha_de_BajaLabel";
+            fecha_de_BajaLabel.Size = new System.Drawing.Size(79, 13);
+            fecha_de_BajaLabel.TabIndex = 46;
+            fecha_de_BajaLabel.Text = "Fecha de Baja:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(320, 321);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(52, 13);
+            telefonoLabel.TabIndex = 48;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // cuotaLabel
+            // 
+            cuotaLabel.AutoSize = true;
+            cuotaLabel.Location = new System.Drawing.Point(465, 361);
+            cuotaLabel.Name = "cuotaLabel";
+            cuotaLabel.Size = new System.Drawing.Size(38, 13);
+            cuotaLabel.TabIndex = 50;
+            cuotaLabel.Text = "Cuota:";
+            // 
+            // deudaLabel
+            // 
+            deudaLabel.AutoSize = true;
+            deudaLabel.Location = new System.Drawing.Point(465, 393);
+            deudaLabel.Name = "deudaLabel";
+            deudaLabel.Size = new System.Drawing.Size(42, 13);
+            deudaLabel.TabIndex = 52;
+            deudaLabel.Text = "Deuda:";
+            // 
+            // nº_SocioTextBox
+            // 
+            this.nº_SocioTextBox.Location = new System.Drawing.Point(248, 147);
+            this.nº_SocioTextBox.Name = "nº_SocioTextBox";
+            this.nº_SocioTextBox.ReadOnly = true;
+            this.nº_SocioTextBox.Size = new System.Drawing.Size(55, 20);
+            this.nº_SocioTextBox.TabIndex = 28;
+            // 
+            // dNITextBox
+            // 
+            this.dNITextBox.Location = new System.Drawing.Point(92, 173);
+            this.dNITextBox.Name = "dNITextBox";
+            this.dNITextBox.ReadOnly = true;
+            this.dNITextBox.Size = new System.Drawing.Size(211, 20);
+            this.dNITextBox.TabIndex = 30;
+            // 
+            // apellidosTextBox
+            // 
+            this.apellidosTextBox.Location = new System.Drawing.Point(92, 199);
+            this.apellidosTextBox.Name = "apellidosTextBox";
+            this.apellidosTextBox.ReadOnly = true;
+            this.apellidosTextBox.Size = new System.Drawing.Size(211, 20);
+            this.apellidosTextBox.TabIndex = 32;
             // 
             // nombreTextBox
             // 
@@ -157,15 +241,6 @@
             this.fotoPictureBox.TabIndex = 35;
             this.fotoPictureBox.TabStop = false;
             // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(32, 266);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
-            direccionLabel.TabIndex = 36;
-            direccionLabel.Text = "Direccion:";
-            // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(94, 263);
@@ -173,15 +248,6 @@
             this.direccionTextBox.ReadOnly = true;
             this.direccionTextBox.Size = new System.Drawing.Size(211, 20);
             this.direccionTextBox.TabIndex = 37;
-            // 
-            // localidadLabel
-            // 
-            localidadLabel.AutoSize = true;
-            localidadLabel.Location = new System.Drawing.Point(32, 292);
-            localidadLabel.Name = "localidadLabel";
-            localidadLabel.Size = new System.Drawing.Size(56, 13);
-            localidadLabel.TabIndex = 38;
-            localidadLabel.Text = "Localidad:";
             // 
             // localidadTextBox
             // 
@@ -191,15 +257,6 @@
             this.localidadTextBox.Size = new System.Drawing.Size(211, 20);
             this.localidadTextBox.TabIndex = 39;
             // 
-            // provinciaLabel
-            // 
-            provinciaLabel.AutoSize = true;
-            provinciaLabel.Location = new System.Drawing.Point(32, 318);
-            provinciaLabel.Name = "provinciaLabel";
-            provinciaLabel.Size = new System.Drawing.Size(54, 13);
-            provinciaLabel.TabIndex = 40;
-            provinciaLabel.Text = "Provincia:";
-            // 
             // provinciaTextBox
             // 
             this.provinciaTextBox.Location = new System.Drawing.Point(94, 315);
@@ -207,15 +264,6 @@
             this.provinciaTextBox.ReadOnly = true;
             this.provinciaTextBox.Size = new System.Drawing.Size(211, 20);
             this.provinciaTextBox.TabIndex = 41;
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(320, 295);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 42;
-            emailLabel.Text = "Email:";
             // 
             // emailTextBox
             // 
@@ -225,15 +273,6 @@
             this.emailTextBox.Size = new System.Drawing.Size(211, 20);
             this.emailTextBox.TabIndex = 43;
             // 
-            // fecha_de_AltaLabel
-            // 
-            fecha_de_AltaLabel.AutoSize = true;
-            fecha_de_AltaLabel.Location = new System.Drawing.Point(32, 361);
-            fecha_de_AltaLabel.Name = "fecha_de_AltaLabel";
-            fecha_de_AltaLabel.Size = new System.Drawing.Size(76, 13);
-            fecha_de_AltaLabel.TabIndex = 44;
-            fecha_de_AltaLabel.Text = "Fecha de Alta:";
-            // 
             // fecha_de_AltaDateTimePicker
             // 
             this.fecha_de_AltaDateTimePicker.Enabled = false;
@@ -241,15 +280,6 @@
             this.fecha_de_AltaDateTimePicker.Name = "fecha_de_AltaDateTimePicker";
             this.fecha_de_AltaDateTimePicker.Size = new System.Drawing.Size(211, 20);
             this.fecha_de_AltaDateTimePicker.TabIndex = 45;
-            // 
-            // fecha_de_BajaLabel
-            // 
-            fecha_de_BajaLabel.AutoSize = true;
-            fecha_de_BajaLabel.Location = new System.Drawing.Point(32, 390);
-            fecha_de_BajaLabel.Name = "fecha_de_BajaLabel";
-            fecha_de_BajaLabel.Size = new System.Drawing.Size(79, 13);
-            fecha_de_BajaLabel.TabIndex = 46;
-            fecha_de_BajaLabel.Text = "Fecha de Baja:";
             // 
             // fecha_de_BajaDateTimePicker
             // 
@@ -259,15 +289,6 @@
             this.fecha_de_BajaDateTimePicker.Size = new System.Drawing.Size(211, 20);
             this.fecha_de_BajaDateTimePicker.TabIndex = 47;
             // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(320, 321);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(52, 13);
-            telefonoLabel.TabIndex = 48;
-            telefonoLabel.Text = "Telefono:";
-            // 
             // telefonoTextBox
             // 
             this.telefonoTextBox.Location = new System.Drawing.Point(382, 318);
@@ -275,15 +296,6 @@
             this.telefonoTextBox.ReadOnly = true;
             this.telefonoTextBox.Size = new System.Drawing.Size(211, 20);
             this.telefonoTextBox.TabIndex = 49;
-            // 
-            // cuotaLabel
-            // 
-            cuotaLabel.AutoSize = true;
-            cuotaLabel.Location = new System.Drawing.Point(465, 361);
-            cuotaLabel.Name = "cuotaLabel";
-            cuotaLabel.Size = new System.Drawing.Size(38, 13);
-            cuotaLabel.TabIndex = 50;
-            cuotaLabel.Text = "Cuota:";
             // 
             // cuotaTextBox
             // 
@@ -293,15 +305,24 @@
             this.cuotaTextBox.Size = new System.Drawing.Size(71, 20);
             this.cuotaTextBox.TabIndex = 51;
             // 
-            // bDClientesDataSet
+            // deudaTextBox
             // 
-            this.bDClientesDataSet.DataSetName = "BDClientesDataSet";
-            this.bDClientesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.deudaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Deuda", true));
+            this.deudaTextBox.Location = new System.Drawing.Point(522, 390);
+            this.deudaTextBox.Name = "deudaTextBox";
+            this.deudaTextBox.ReadOnly = true;
+            this.deudaTextBox.Size = new System.Drawing.Size(71, 20);
+            this.deudaTextBox.TabIndex = 53;
             // 
             // tableBindingSource
             // 
             this.tableBindingSource.DataMember = "Table";
             this.tableBindingSource.DataSource = this.bDClientesDataSet;
+            // 
+            // bDClientesDataSet
+            // 
+            this.bDClientesDataSet.DataSetName = "BDClientesDataSet";
+            this.bDClientesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableTableAdapter
             // 
@@ -313,29 +334,40 @@
             this.tableAdapterManager.TableTableAdapter = this.tableTableAdapter;
             this.tableAdapterManager.UpdateOrder = GymProject.BDClientesDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // deudaLabel
+            // dardeBaja
             // 
-            deudaLabel.AutoSize = true;
-            deudaLabel.Location = new System.Drawing.Point(465, 393);
-            deudaLabel.Name = "deudaLabel";
-            deudaLabel.Size = new System.Drawing.Size(42, 13);
-            deudaLabel.TabIndex = 52;
-            deudaLabel.Text = "Deuda:";
+            this.dardeBaja.Location = new System.Drawing.Point(518, 428);
+            this.dardeBaja.Name = "dardeBaja";
+            this.dardeBaja.Size = new System.Drawing.Size(75, 23);
+            this.dardeBaja.TabIndex = 54;
+            this.dardeBaja.Text = "Dar de baja";
+            this.dardeBaja.UseVisualStyleBackColor = true;
             // 
-            // deudaTextBox
+            // stateClient
             // 
-            this.deudaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tableBindingSource, "Deuda", true));
-            this.deudaTextBox.Location = new System.Drawing.Point(522, 390);
-            this.deudaTextBox.Name = "deudaTextBox";
-            this.deudaTextBox.ReadOnly = true;
-            this.deudaTextBox.Size = new System.Drawing.Size(71, 20);
-            this.deudaTextBox.TabIndex = 53;
+            this.stateClient.Location = new System.Drawing.Point(513, 260);
+            this.stateClient.Name = "stateClient";
+            this.stateClient.ReadOnly = true;
+            this.stateClient.Size = new System.Drawing.Size(80, 20);
+            this.stateClient.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(419, 263);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Estado del socio:";
             // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 450);
+            this.ClientSize = new System.Drawing.Size(641, 483);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.stateClient);
+            this.Controls.Add(this.dardeBaja);
             this.Controls.Add(deudaLabel);
             this.Controls.Add(this.deudaTextBox);
             this.Controls.Add(nº_SocioLabel);
@@ -369,8 +401,8 @@
             this.Text = "Socio";
             this.Load += new System.EventHandler(this.Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDClientesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDClientesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +428,8 @@
         private BDClientesDataSetTableAdapters.TableTableAdapter tableTableAdapter;
         private BDClientesDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox deudaTextBox;
+        private System.Windows.Forms.Button dardeBaja;
+        private System.Windows.Forms.TextBox stateClient;
+        private System.Windows.Forms.Label label1;
     }
 }

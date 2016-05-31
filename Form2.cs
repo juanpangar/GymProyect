@@ -49,6 +49,12 @@ namespace GymProject
             cliente.ShowDialog();
         }
 
+        private void pagoB_Click(object sender, EventArgs e)
+        {
+            Pago pago = new Pago();
+            pago.ShowDialog();
+        }
+
         //TODO: no olvidar la parte de impagos sera tambien de las ultimas partes en realizarse
     }
 }

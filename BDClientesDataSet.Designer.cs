@@ -307,6 +307,10 @@ namespace GymProject {
             
             private global::System.Data.DataColumn columnDeuda;
             
+            private global::System.Data.DataColumn columnBaja;
+            
+            private global::System.Data.DataColumn columnFinalizacion_de_pago;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TableDataTable() {
@@ -454,6 +458,22 @@ namespace GymProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BajaColumn {
+                get {
+                    return this.columnBaja;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Finalizacion_de_pagoColumn {
+                get {
+                    return this.columnFinalizacion_de_pago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +509,23 @@ namespace GymProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TableRow AddTableRow(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono, decimal Cuota, decimal Deuda) {
+            public TableRow AddTableRow(
+                        int Nº_Socio, 
+                        string DNI, 
+                        string Apellidos, 
+                        string Nombre, 
+                        byte[] Foto, 
+                        string Direccion, 
+                        string Localidad, 
+                        string Provincia, 
+                        string Email, 
+                        System.DateTime Fecha_de_Alta, 
+                        System.DateTime Fecha_de_Baja, 
+                        decimal Telefono, 
+                        decimal Cuota, 
+                        decimal Deuda, 
+                        bool Baja, 
+                        System.DateTime Finalizacion_de_pago) {
                 TableRow rowTableRow = ((TableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nº_Socio,
@@ -505,7 +541,9 @@ namespace GymProject {
                         Fecha_de_Baja,
                         Telefono,
                         Cuota,
-                        Deuda};
+                        Deuda,
+                        Baja,
+                        Finalizacion_de_pago};
                 rowTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTableRow);
                 return rowTableRow;
@@ -549,6 +587,8 @@ namespace GymProject {
                 this.columnTelefono = base.Columns["Telefono"];
                 this.columnCuota = base.Columns["Cuota"];
                 this.columnDeuda = base.Columns["Deuda"];
+                this.columnBaja = base.Columns["Baja"];
+                this.columnFinalizacion_de_pago = base.Columns["Finalizacion de pago"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -582,6 +622,10 @@ namespace GymProject {
                 base.Columns.Add(this.columnCuota);
                 this.columnDeuda = new global::System.Data.DataColumn("Deuda", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDeuda);
+                this.columnBaja = new global::System.Data.DataColumn("Baja", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaja);
+                this.columnFinalizacion_de_pago = new global::System.Data.DataColumn("Finalizacion de pago", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFinalizacion_de_pago);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNº_Socio}, true));
                 this.columnNº_Socio.AllowDBNull = false;
@@ -605,6 +649,7 @@ namespace GymProject {
                 this.columnFecha_de_Baja.AllowDBNull = false;
                 this.columnTelefono.AllowDBNull = false;
                 this.columnCuota.AllowDBNull = false;
+                this.columnBaja.AllowDBNull = false;
                 this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
                 this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
                 this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
@@ -913,6 +958,33 @@ namespace GymProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Baja {
+                get {
+                    return ((bool)(this[this.tableTable.BajaColumn]));
+                }
+                set {
+                    this[this.tableTable.BajaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Finalizacion_de_pago {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTable.Finalizacion_de_pagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Finalizacion de pago\' in table \'Table\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTable.Finalizacion_de_pagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDeudaNull() {
                 return this.IsNull(this.tableTable.DeudaColumn);
             }
@@ -921,6 +993,18 @@ namespace GymProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDeudaNull() {
                 this[this.tableTable.DeudaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFinalizacion_de_pagoNull() {
+                return this.IsNull(this.tableTable.Finalizacion_de_pagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFinalizacion_de_pagoNull() {
+                this[this.tableTable.Finalizacion_de_pagoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1097,10 +1181,12 @@ namespace GymProject.BDClientesDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Telefono", "Telefono");
             tableMapping.ColumnMappings.Add("Cuota", "Cuota");
             tableMapping.ColumnMappings.Add("Deuda", "Deuda");
+            tableMapping.ColumnMappings.Add("Baja", "Baja");
+            tableMapping.ColumnMappings.Add("Finalizacion de pago", "Finalizacion de pago");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Table] WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota) AND ((@IsNull_Deuda = 1 AND [Deuda] IS NULL) OR ([Deuda] = @Original_Deuda)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Table] WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ((@IsNull_Fecha_de_Baja = 1 AND [Fecha de Baja] IS NULL) OR ([Fecha de Baja] = @Original_Fecha_de_Baja)) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota) AND ((@IsNull_Deuda = 1 AND [Deuda] IS NULL) OR ([Deuda] = @Original_Deuda)) AND ([Baja] = @Original_Baja) AND ((@IsNull_Finalizacion_de_pago = 1 AND [Finalizacion de pago] IS NULL) OR ([Finalizacion de pago] = @Original_Finalizacion_de_pago)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1111,15 +1197,19 @@ namespace GymProject.BDClientesDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Provincia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Provincia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha_de_Baja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Deuda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deuda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Deuda", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Deuda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Baja", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Finalizacion_de_pago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Finalizacion_de_pago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Table] ([Nº Socio], [DNI], [Apellidos], [Nombre], [Foto], [Direccion], [Localidad], [Provincia], [Email], [Fecha de Alta], [Fecha de Baja], [Telefono], [Cuota], [Deuda]) VALUES (@Nº_Socio, @DNI, @Apellidos, @Nombre, @Foto, @Direccion, @Localidad, @Provincia, @Email, @Fecha_de_Alta, @Fecha_de_Baja, @Telefono, @Cuota, @Deuda);
-SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Table] ([Nº Socio], [DNI], [Apellidos], [Nombre], [Foto], [Direccion], [Localidad], [Provincia], [Email], [Fecha de Alta], [Fecha de Baja], [Telefono], [Cuota], [Deuda], [Baja], [Finalizacion de pago]) VALUES (@Nº_Socio, @DNI, @Apellidos, @Nombre, @Foto, @Direccion, @Localidad, @Provincia, @Email, @Fecha_de_Alta, @Fecha_de_Baja, @Telefono, @Cuota, @Deuda, @Baja, @Finalizacion_de_pago);
+SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda, Baja, [Finalizacion de pago] FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1135,10 +1225,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deuda", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Deuda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Baja", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Baja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Finalizacion_de_pago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table] SET [Nº Socio] = @Nº_Socio, [DNI] = @DNI, [Apellidos] = @Apellidos, [Nombre] = @Nombre, [Foto] = @Foto, [Direccion] = @Direccion, [Localidad] = @Localidad, [Provincia] = @Provincia, [Email] = @Email, [Fecha de Alta] = @Fecha_de_Alta, [Fecha de Baja] = @Fecha_de_Baja, [Telefono] = @Telefono, [Cuota] = @Cuota, [Deuda] = @Deuda WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ([Fecha de Baja] = @Original_Fecha_de_Baja) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota) AND ((@IsNull_Deuda = 1 AND [Deuda] IS NULL) OR ([Deuda] = @Original_Deuda)));
-SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Table] SET [Nº Socio] = @Nº_Socio, [DNI] = @DNI, [Apellidos] = @Apellidos, [Nombre] = @Nombre, [Foto] = @Foto, [Direccion] = @Direccion, [Localidad] = @Localidad, [Provincia] = @Provincia, [Email] = @Email, [Fecha de Alta] = @Fecha_de_Alta, [Fecha de Baja] = @Fecha_de_Baja, [Telefono] = @Telefono, [Cuota] = @Cuota, [Deuda] = @Deuda, [Baja] = @Baja, [Finalizacion de pago] = @Finalizacion_de_pago WHERE (([Nº Socio] = @Original_Nº_Socio) AND ([DNI] = @Original_DNI) AND ([Apellidos] = @Original_Apellidos) AND ([Nombre] = @Original_Nombre) AND ([Direccion] = @Original_Direccion) AND ([Localidad] = @Original_Localidad) AND ([Provincia] = @Original_Provincia) AND ([Email] = @Original_Email) AND ([Fecha de Alta] = @Original_Fecha_de_Alta) AND ((@IsNull_Fecha_de_Baja = 1 AND [Fecha de Baja] IS NULL) OR ([Fecha de Baja] = @Original_Fecha_de_Baja)) AND ([Telefono] = @Original_Telefono) AND ([Cuota] = @Original_Cuota) AND ((@IsNull_Deuda = 1 AND [Deuda] IS NULL) OR ([Deuda] = @Original_Deuda)) AND ([Baja] = @Original_Baja) AND ((@IsNull_Finalizacion_de_pago = 1 AND [Finalizacion de pago] IS NULL) OR ([Finalizacion de pago] = @Original_Finalizacion_de_pago)));
+SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda, Baja, [Finalizacion de pago] FROM [Table] WHERE ([Nº Socio] = @Nº_Socio)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1154,6 +1246,8 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Deuda", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Deuda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Baja", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Baja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Finalizacion_de_pago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nº_Socio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nº Socio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DNI", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DNI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Apellidos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1163,11 +1257,15 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Provincia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Provincia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Alta", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Alta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha_de_Baja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha_de_Baja", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha de Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Telefono", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 9, 0, "Telefono", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cuota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 2, 2, "Cuota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Deuda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Deuda", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Deuda", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "Deuda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Baja", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Baja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Finalizacion_de_pago", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Finalizacion_de_pago", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Finalizacion de pago", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1184,7 +1282,8 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia," +
-                " Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda FROM [Table]";
+                " Email, [Fecha de Alta], [Fecha de Baja], Telefono, Cuota, Deuda, Baja, [Finaliz" +
+                "acion de pago] FROM [Table]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1245,7 +1344,7 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Nº_Socio, string Original_DNI, string Original_Apellidos, string Original_Nombre, string Original_Direccion, string Original_Localidad, string Original_Provincia, string Original_Email, System.DateTime Original_Fecha_de_Alta, System.DateTime Original_Fecha_de_Baja, decimal Original_Telefono, decimal Original_Cuota, global::System.Nullable<decimal> Original_Deuda) {
+        public virtual int Delete(int Original_Nº_Socio, string Original_DNI, string Original_Apellidos, string Original_Nombre, string Original_Direccion, string Original_Localidad, string Original_Provincia, string Original_Email, System.DateTime Original_Fecha_de_Alta, global::System.Nullable<global::System.DateTime> Original_Fecha_de_Baja, decimal Original_Telefono, decimal Original_Cuota, global::System.Nullable<decimal> Original_Deuda, bool Original_Baja, global::System.Nullable<global::System.DateTime> Original_Finalizacion_de_pago) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Nº_Socio));
             if ((Original_DNI == null)) {
                 throw new global::System.ArgumentNullException("Original_DNI");
@@ -1290,16 +1389,32 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Email));
             }
             this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Fecha_de_Alta));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Fecha_de_Baja));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Telefono));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_Cuota));
-            if ((Original_Deuda.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((decimal)(Original_Deuda.Value));
+            if ((Original_Fecha_de_Baja.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Fecha_de_Baja.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_Telefono));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_Cuota));
+            if ((Original_Deuda.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((decimal)(Original_Deuda.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((bool)(Original_Baja));
+            if ((Original_Finalizacion_de_pago.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_Finalizacion_de_pago.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1321,7 +1436,23 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Nº_Socio, string DNI, string Apellidos, string Nombre, byte[] Foto, string Direccion, string Localidad, string Provincia, string Email, System.DateTime Fecha_de_Alta, System.DateTime Fecha_de_Baja, decimal Telefono, decimal Cuota, global::System.Nullable<decimal> Deuda) {
+        public virtual int Insert(
+                    int Nº_Socio, 
+                    string DNI, 
+                    string Apellidos, 
+                    string Nombre, 
+                    byte[] Foto, 
+                    string Direccion, 
+                    string Localidad, 
+                    string Provincia, 
+                    string Email, 
+                    System.DateTime Fecha_de_Alta, 
+                    global::System.Nullable<global::System.DateTime> Fecha_de_Baja, 
+                    decimal Telefono, 
+                    decimal Cuota, 
+                    global::System.Nullable<decimal> Deuda, 
+                    bool Baja, 
+                    global::System.Nullable<global::System.DateTime> Finalizacion_de_pago) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Nº_Socio));
             if ((DNI == null)) {
                 throw new global::System.ArgumentNullException("DNI");
@@ -1372,7 +1503,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Email));
             }
             this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Fecha_de_Alta));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja));
+            if ((Fecha_de_Baja.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(Telefono));
             this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(Cuota));
             if ((Deuda.HasValue == true)) {
@@ -1380,6 +1516,13 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[14].Value = ((bool)(Baja));
+            if ((Finalizacion_de_pago.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((System.DateTime)(Finalizacion_de_pago.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1412,10 +1555,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Provincia, 
                     string Email, 
                     System.DateTime Fecha_de_Alta, 
-                    System.DateTime Fecha_de_Baja, 
+                    global::System.Nullable<global::System.DateTime> Fecha_de_Baja, 
                     decimal Telefono, 
                     decimal Cuota, 
                     global::System.Nullable<decimal> Deuda, 
+                    bool Baja, 
+                    global::System.Nullable<global::System.DateTime> Finalizacion_de_pago, 
                     int Original_Nº_Socio, 
                     string Original_DNI, 
                     string Original_Apellidos, 
@@ -1425,10 +1570,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Original_Provincia, 
                     string Original_Email, 
                     System.DateTime Original_Fecha_de_Alta, 
-                    System.DateTime Original_Fecha_de_Baja, 
+                    global::System.Nullable<global::System.DateTime> Original_Fecha_de_Baja, 
                     decimal Original_Telefono, 
                     decimal Original_Cuota, 
-                    global::System.Nullable<decimal> Original_Deuda) {
+                    global::System.Nullable<decimal> Original_Deuda, 
+                    bool Original_Baja, 
+                    global::System.Nullable<global::System.DateTime> Original_Finalizacion_de_pago) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Nº_Socio));
             if ((DNI == null)) {
                 throw new global::System.ArgumentNullException("DNI");
@@ -1479,7 +1626,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Email));
             }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Fecha_de_Alta));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja));
+            if ((Fecha_de_Baja.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Fecha_de_Baja.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Telefono));
             this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Cuota));
             if ((Deuda.HasValue == true)) {
@@ -1488,60 +1640,83 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Nº_Socio));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Baja));
+            if ((Finalizacion_de_pago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Finalizacion_de_pago.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Nº_Socio));
             if ((Original_DNI == null)) {
                 throw new global::System.ArgumentNullException("Original_DNI");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_DNI));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_DNI));
             }
             if ((Original_Apellidos == null)) {
                 throw new global::System.ArgumentNullException("Original_Apellidos");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Apellidos));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Apellidos));
             }
             if ((Original_Nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_Nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Nombre));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Nombre));
             }
             if ((Original_Direccion == null)) {
                 throw new global::System.ArgumentNullException("Original_Direccion");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Direccion));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Direccion));
             }
             if ((Original_Localidad == null)) {
                 throw new global::System.ArgumentNullException("Original_Localidad");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Localidad));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Localidad));
             }
             if ((Original_Provincia == null)) {
                 throw new global::System.ArgumentNullException("Original_Provincia");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Provincia));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Provincia));
             }
             if ((Original_Email == null)) {
                 throw new global::System.ArgumentNullException("Original_Email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Email));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_Fecha_de_Alta));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_Fecha_de_Baja));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_Telefono));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_Cuota));
-            if ((Original_Deuda.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_Deuda.Value));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Fecha_de_Alta));
+            if ((Original_Fecha_de_Baja.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_Fecha_de_Baja.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_Telefono));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_Cuota));
+            if ((Original_Deuda.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_Deuda.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_Baja));
+            if ((Original_Finalizacion_de_pago.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(Original_Finalizacion_de_pago.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1573,10 +1748,12 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Provincia, 
                     string Email, 
                     System.DateTime Fecha_de_Alta, 
-                    System.DateTime Fecha_de_Baja, 
+                    global::System.Nullable<global::System.DateTime> Fecha_de_Baja, 
                     decimal Telefono, 
                     decimal Cuota, 
                     global::System.Nullable<decimal> Deuda, 
+                    bool Baja, 
+                    global::System.Nullable<global::System.DateTime> Finalizacion_de_pago, 
                     int Original_Nº_Socio, 
                     string Original_DNI, 
                     string Original_Apellidos, 
@@ -1586,11 +1763,13 @@ SELECT [Nº Socio], DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provinci
                     string Original_Provincia, 
                     string Original_Email, 
                     System.DateTime Original_Fecha_de_Alta, 
-                    System.DateTime Original_Fecha_de_Baja, 
+                    global::System.Nullable<global::System.DateTime> Original_Fecha_de_Baja, 
                     decimal Original_Telefono, 
                     decimal Original_Cuota, 
-                    global::System.Nullable<decimal> Original_Deuda) {
-            return this.Update(Original_Nº_Socio, DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, Fecha_de_Alta, Fecha_de_Baja, Telefono, Cuota, Deuda, Original_Nº_Socio, Original_DNI, Original_Apellidos, Original_Nombre, Original_Direccion, Original_Localidad, Original_Provincia, Original_Email, Original_Fecha_de_Alta, Original_Fecha_de_Baja, Original_Telefono, Original_Cuota, Original_Deuda);
+                    global::System.Nullable<decimal> Original_Deuda, 
+                    bool Original_Baja, 
+                    global::System.Nullable<global::System.DateTime> Original_Finalizacion_de_pago) {
+            return this.Update(Original_Nº_Socio, DNI, Apellidos, Nombre, Foto, Direccion, Localidad, Provincia, Email, Fecha_de_Alta, Fecha_de_Baja, Telefono, Cuota, Deuda, Baja, Finalizacion_de_pago, Original_Nº_Socio, Original_DNI, Original_Apellidos, Original_Nombre, Original_Direccion, Original_Localidad, Original_Provincia, Original_Email, Original_Fecha_de_Alta, Original_Fecha_de_Baja, Original_Telefono, Original_Cuota, Original_Deuda, Original_Baja, Original_Finalizacion_de_pago);
         }
     }
     

@@ -51,6 +51,7 @@
             this.morosoPB1 = new System.Windows.Forms.PictureBox();
             this.numeroMorososL = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pagoB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.impagos.SuspendLayout();
@@ -73,7 +74,7 @@
             // searchClientL
             // 
             this.searchClientL.AutoSize = true;
-            this.searchClientL.Location = new System.Drawing.Point(53, 272);
+            this.searchClientL.Location = new System.Drawing.Point(55, 317);
             this.searchClientL.Name = "searchClientL";
             this.searchClientL.Size = new System.Drawing.Size(71, 13);
             this.searchClientL.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             // searchTextB
             // 
-            this.searchTextB.Location = new System.Drawing.Point(56, 288);
+            this.searchTextB.Location = new System.Drawing.Point(58, 333);
             this.searchTextB.Name = "searchTextB";
             this.searchTextB.Size = new System.Drawing.Size(189, 20);
             this.searchTextB.TabIndex = 4;
@@ -89,7 +90,7 @@
             // searchB
             // 
             this.searchB.Image = ((System.Drawing.Image)(resources.GetObject("searchB.Image")));
-            this.searchB.Location = new System.Drawing.Point(257, 285);
+            this.searchB.Location = new System.Drawing.Point(259, 330);
             this.searchB.Name = "searchB";
             this.searchB.Size = new System.Drawing.Size(25, 25);
             this.searchB.TabIndex = 5;
@@ -264,11 +265,22 @@
             this.textBox1.TabIndex = 21;
             this.textBox1.Text = "0";
             // 
+            // pagoB
+            // 
+            this.pagoB.Location = new System.Drawing.Point(109, 270);
+            this.pagoB.Name = "pagoB";
+            this.pagoB.Size = new System.Drawing.Size(106, 29);
+            this.pagoB.TabIndex = 22;
+            this.pagoB.Text = "Pago";
+            this.pagoB.UseVisualStyleBackColor = true;
+            this.pagoB.Click += new System.EventHandler(this.pagoB_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 394);
+            this.Controls.Add(this.pagoB);
             this.Controls.Add(this.impagos);
             this.Controls.Add(this.searchB);
             this.Controls.Add(this.searchTextB);
@@ -279,6 +291,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Inicio";
             this.Text = "Gym SEUL";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -319,5 +332,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button pagoB;
     }
 }
